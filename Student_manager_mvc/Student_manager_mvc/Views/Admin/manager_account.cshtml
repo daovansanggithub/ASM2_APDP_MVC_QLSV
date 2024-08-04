@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "manager account";
+    Layout = "~/Views/Shared/_Layout_admin.cshtml";
+}
+
+@model IEnumerable<Student_manager_mvc.Models.TaiKhoan> // Đảm bảo rằng bạn đã import namespace chứa model Student
+
+<div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>User <b>Management</b></h2>
+                    </div>
+                    <div class="col-sm-7">
+                        <a href="~/Admin/Add_account" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+                        @* <a href="#" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a> *@
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>UserName</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                        <th>Address</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var tk in Model)
+                    {
+                        <tr>
+                            <td>@tk.AccountId</td>
+                            <td>@tk.Username</td>
+                            <td>@tk.Phone</td>
+                            <td><span class="status text-success">&bull;</span> Active</td>
+                            <td>@tk.Address</td>
+                            <td>@tk.Role</td>
+                            
+ 
+                            <td>
+                                <a href="~/Admin/Edit_account/@tk.AccountId" class="settings" title="Settings" data-toggle="tooltip"><i class="material-icons">&#xE8B8;</i></a>
+                                <a href="~/Admin/Delete_account/@tk.AccountId" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE5C9;</i></a>
+                            </td>
+                        </tr>
+                    }
+
+
+                    
+                   
+                </tbody>
+            </table>
+            <div class="clearfix">
+
+                <ul class="pagination">
+
+                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item "><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">4</a></li>
+                    <li class="page-item"><a href="#" class="page-link">5</a></li>
+                    <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

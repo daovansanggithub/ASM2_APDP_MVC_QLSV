@@ -1,0 +1,159 @@
+﻿@model Student_manager_mvc.Models.DangKyHoc
+
+
+
+
+
+
+@{
+    ViewData["Title"] = "Dangky";
+    Layout = "~/Views/Shared/_Layout_student.cshtml";
+}
+
+
+
+<!-- CONTENT -->
+<section id="content">
+	<!-- NAVBAR -->
+	<nav>
+		<i class='bx bx-menu'></i>
+		<a href="#" class="nav-link">Education - BTEC FPT</a>
+
+		@* search *@
+		<form action="#">
+			<div class="form-input">
+				<input type="search" placeholder="Search...">
+				<button type="submit" class="search-btn"><i class='bx bx-search'></i></button>
+			</div>
+		</form>
+
+		<input type="checkbox" id="switch-mode" hidden>
+
+		<label for="switch-mode" class="switch-mode"></label>
+
+		<!-- thong báo-->
+		<a href="#" class="notification">
+			<i class='bx bxs-bell'></i>
+			<span class="num">8</span>
+		</a>
+		<a href="#" class="profile">
+			<img src="~/img/avata_teacher.jpg">
+		</a>
+	</nav>
+	<!-- NAVBAR -->
+	<!-- MAIN -->
+	<main>
+		<div class="head-title">
+			<div class="left">
+				<h1>Register Re-Exam Page</h1>
+				<ul class="breadcrumb">
+					<li>
+						<a href="#"></a>
+					</li>
+					<li><i class='bx bx-chevron-right'></i></li>
+					<li>
+						<a class="active" href="#">@ViewBag.err</a>
+					</li>
+				</ul>
+			</div>
+			<a href="#" class="btn-download">
+				<i class='bx bxs-cloud-download'></i>
+				<span class="text">Course payment</span>
+			</a>
+		</div>
+
+		<!-- cut -->
+		<ul class="box-info">
+			<li>
+				<h1>Regiter</h1>
+
+				<hr />
+				<div class="row">
+					<div class="col-md-4">
+						<form asp-action="Dangky">
+							<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+							<div class="form-group">
+								<label asp-for="EnrollmentId" class="control-label"></label>
+								<input asp-for="EnrollmentId" class="form-control" />
+								@* <span asp-validation-for="EnrollmentId" class="text-danger"></span> *@
+							</div>
+							<div class="form-group">
+								<label asp-for="StudentId" class="control-label"></label>
+								<input asp-for="StudentId" class="form-control" />
+							</div>
+							<div class="form-group">
+								<label asp-for="ClassId" class="control-label"></label>
+								<select asp-for="ClassId" class="form-control" asp-items="ViewBag.ClassId">
+									<option value="LH001">D03</option>
+									<option value="LH002">B04</option>
+									<option value="LH003">D03</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label asp-for="SubjectId" class="control-label"></label>
+								<select asp-for="SubjectId" class="form-control" asp-items="ViewBag.SubjectId">
+									<option value="MH001">Maths</option>
+									<option value="MH002">APDP</option>
+									<option value="MH003">BPS</option>
+								</select>
+							</div>
+							<div style="text-align: center;" class="form-group">
+								<input type="submit" value="Create" class="btn btn-primary" />
+							</div>
+
+						</form>
+					</div>
+				</div>
+
+				
+			</li>
+			<li>
+				<i class='bx bxs-calendar-check'></i>
+				<span class="text">
+					<h3>College</h3>
+					<p>BTEC FPT</p>
+				</span>
+			</li>
+			<li>
+				<i class='bx bxs-group'></i>
+				<span class="text">
+					<h3>Teacher</h3>
+					<p>Mr.Dong</p>
+				</span>
+			</li>
+			
+		</ul>
+
+
+		<div class="table-data">
+			
+				
+				
+
+			
+			
+			<!--
+			<div class="todo">
+				<div class="head">
+					<h3>Todos</h3>
+					<i class='bx bx-plus'></i>
+					<i class='bx bx-filter'></i>
+				</div>
+
+				<ul class="todo-list">
+					<li class="completed">
+						<p>Todo List</p>
+						<i class='bx bx-dots-vertical-rounded'></i>
+					</li>
+				</ul>
+			</div>
+			-->
+		</div>
+	</main>
+	<!-- MAIN -->
+</section>
+<!-- CONTENT -->
+
+
+
+
